@@ -5,7 +5,7 @@ FROM jlesage/baseimage-gui:debian-9
 WORKDIR /tmp
 
 # Set Version to install
-ARG SIGNAL_VERSION=1.30.0
+ARG SIGNAL_VERSION=1.31.0
 
 # Install required software
 RUN \
