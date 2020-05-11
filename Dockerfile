@@ -4,15 +4,15 @@ FROM jlesage/baseimage-gui:debian-9
 # Define working directory
 WORKDIR /tmp
 
-# Set Version to install
-ARG SIGNAL_VERSION=1.31.0
+# Set Version to install - use latest by default
+# ARG SIGNAL_VERSION=1.31.0
 
 # Install required software
 RUN \
 	add-pkg software-properties-common apt-transport-https ca-certificates curl gnupg2 libgtk-3-0 && \
 	curl -s 'https://updates.signal.org/desktop/apt/keys.asc' | apt-key add - && \
 	add-apt-repository 'deb https://updates.signal.org/desktop/apt xenial main' && \
-	add-pkg signal-desktop=${SIGNAL_VERSION} && \
+	add-pkg signal-desktop && \
 	del-pkg software-properties-common apt-transport-https ca-certificates curl gnupg2
 
 # Add files
