@@ -4,9 +4,6 @@ FROM jlesage/baseimage-gui:debian-9
 # Define working directory
 WORKDIR /tmp
 
-# Set Version to install - use latest by default
-# ARG SIGNAL_VERSION=1.31.0
-
 # Install required software
 RUN \
 	add-pkg software-properties-common apt-transport-https ca-certificates curl gnupg2 libgtk-3-0 && \
