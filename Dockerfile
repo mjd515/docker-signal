@@ -1,12 +1,12 @@
 # Pull base image
-FROM jlesage/baseimage-gui:debian-9
+FROM jlesage/baseimage-gui:debian-10
 
 # Define working directory
 WORKDIR /tmp
 
 # Install required software
 RUN \
-	add-pkg software-properties-common apt-transport-https ca-certificates curl gnupg2 libgtk-3-0 && \
+	add-pkg software-properties-common apt-transport-https ca-certificates curl gnupg2 libgtk-3-0 procps && \
 	curl -s 'https://updates.signal.org/desktop/apt/keys.asc' | apt-key add - && \
 	add-apt-repository 'deb https://updates.signal.org/desktop/apt xenial main' && \
 	add-pkg signal-desktop=1.39.4 && \
