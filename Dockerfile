@@ -12,7 +12,7 @@ RUN \
 	add-pkg signal-desktop=1.40.0 && \
 	del-pkg software-properties-common apt-transport-https ca-certificates curl gnupg2
 
-# Add files
+# Add file
 COPY startapp.sh /startapp.sh
 
 # Set environment variables
