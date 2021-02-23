@@ -6,11 +6,12 @@ WORKDIR /tmp
 
 # Install required software
 RUN \
-	add-pkg software-properties-common apt-transport-https ca-certificates curl gnupg2 libgtk-3-0 procps && \
+	add-pkg software-properties-common apt-transport-https ca-certificates curl gnupg2 libgtk-3-0 procps libgbm-dev && \
 	curl -s 'https://updates.signal.org/desktop/apt/keys.asc' | apt-key add - && \
 	add-apt-repository 'deb https://updates.signal.org/desktop/apt xenial main' && \
-	add-pkg signal-desktop=1.40.1 && \
-	del-pkg software-properties-common apt-transport-https ca-certificates curl gnupg2
+	add-pkg signal-desktop=1.40.1 
+	#&& \
+	#del-pkg software-properties-common apt-transport-https ca-certificates curl gnupg2
 
 # Add file
 COPY startapp.sh /startapp.sh
