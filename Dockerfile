@@ -19,6 +19,7 @@ COPY startapp.sh /startapp.sh
 # Set environment variables
 ENV APP_NAME="signal-desktop"
 
+
 # Metadata.
 LABEL \
       org.label-schema.name="signal-desktop" \
