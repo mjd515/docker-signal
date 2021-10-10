@@ -4,6 +4,7 @@ FROM jlesage/baseimage-gui:debian-10
 # Define working directory
 WORKDIR /tmp
 
+
 # Install required software
 RUN \
 	add-pkg software-properties-common apt-transport-https ca-certificates curl gnupg2 libgtk-3-0 procps libgbm-dev && \
